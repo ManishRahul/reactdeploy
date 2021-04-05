@@ -1,56 +1,29 @@
-import logo from './logo.svg';
-import React, {useState} from 'react';
+//import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Graph from './components/Graph';
-
-import LoginForm from './components/LoginForm';
-
+//import Graph from './components/Graph';
+// import MainCom from './components/MainCom';
+//import ButtonHandler from './components/ButtonHandler';
+//import Details from './components/Details';
+//import TestFetch from './components/TestFetch';
+import Fetchdata2 from './components/Fetchdata2';
+//"homepage" : "http://ManishRahul.github.io/reactdeploy",
+//"predeploy": "npm run build",
+  //  "deploy": "gh-pages -d build",
 function App() {
-  const adminUser = {
-    email1 : "MICKY",
-    password1 : "98765",
-    email2 : "r@gmail",
-    password2 : "321"
-  }
+  
+  
   //const [user1,setUser1] = useState({name1:"", email1 : ""});
-  const [user1,setUser1] = useState({ email1 : ""});
-  const [error,setError] = useState("");
+  
 
-  const Login = details => {
-    console.log(details);
-
-    if (details.email == adminUser.email1 && details.password == adminUser.password1) {
-      console.log("Logged in");
-      setUser1({
-       // name1: details.name,
-        email1: details.email
-      })
-    } 
-    else {
-      console.log("Details don't match");
-      setError("Details don't match");
-    }
-
-   }
-
-   const Logout = () => {
-    // setUser1({name1:"", email1 : ""});
-    setUser1({ email1 : ""});
-   }
+   
     return (
     <div className="App">
-   
-      {(user1.email1 != "") ? (
-       <div className="welcome">
-         <h2>Welcome <span>{user1.email1} !!</span></h2>
-
-         <Graph> </Graph> <br></br>
-         
-         <button onClick={Logout}>Logout</button>
-         </div>
-     ) : (
-       <LoginForm Login={Login} error={error} />
-     )}
+      <Fetchdata2></Fetchdata2>
+      {/* <TestFetch></TestFetch> */}
+   {/* <MainCom></MainCom> */}
+{/* <Details></Details> */}
+{/* <ButtonHandler></ButtonHandler> */}
      
     </div>
   );
